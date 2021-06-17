@@ -340,7 +340,7 @@ bool events::in::variantlist(gameupdatepacket_t* packet) {
             //hide unneeded ui when resolving
             //for the /uid command
 
-            } else if (gt::resolving_uid2 && content.find("`4Stop ignoring") != -1) {
+            if (gt::resolving_uid2 && content.find("`4Stop ignoring") != -1) {
                 int pos = content.rfind("|`4Stop ignoring");
                 auto ignore_substring = content.substr(0, pos);
                 auto uid = ignore_substring.substr(ignore_substring.rfind("add_button|") + 11);
